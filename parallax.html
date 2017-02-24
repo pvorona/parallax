@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="http://db.onlinewebfonts.com/c/ef5a32c267adadd7f5ebaa8f89e62b45?family=Maven+Pro+Light" rel="stylesheet" type="text/css">
+  <!-- <link href="http://db.onlinewebfonts.com/c/ef5a32c267adadd7f5ebaa8f89e62b45?family=Maven+Pro+Light" rel="stylesheet" type="text/css"> -->
+  <link href="http://db.onlinewebfonts.com/c/02514fa6256f2e5f8223acf684249fe6?family=Maven+Pro+Light" rel="stylesheet" type="text/css"/>
 
   <meta charset="UTF-8">
   <title>Parallax</title>
@@ -47,7 +48,7 @@
       display: flex;
       font-family: Maven Pro Light;
       margin: auto;
-      font-size: 160px;
+      font-size: 180px;
       color: hsl(30, 100%, 50%);
     }
 
@@ -128,9 +129,10 @@
       position: absolute;
       bottom: 0;
       left: 50%;
-      padding: 2em;
+      padding: 5em;
       opacity: 0;
       animation: a-arrow 1s .5s forwards;
+      cursor: pointer;
     }
 
     @keyframes a-arrow {
@@ -153,11 +155,18 @@
 
     .arrow-down::before {
       position: absolute;
+      top: -2em;
+      left: calc(2em - 2px);
       width: 2px;
       height: 4em;
       content: '';
       background-color: currentColor;
       transform-origin: inherit;
+      transition: transform .5s;
+    }
+
+    .arrow-container:hover .arrow-down::before {
+      transform: rotate(15deg);
     }
 
     .arrow-down::after {
@@ -165,9 +174,16 @@
       position: absolute;
       width: 2px;
       height: 4em;
+      top: -2em;
+      left: 2em;
       content: '';
       background-color: currentColor;
       transform-origin: inherit;
+      transition: transform .5s;
+    }
+
+    .arrow-container:hover .arrow-down::after {
+      transform: rotate(75deg);
     }
 
     * {
