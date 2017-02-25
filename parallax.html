@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="http://db.onlinewebfonts.com/c/ef5a32c267adadd7f5ebaa8f89e62b45?family=Maven+Pro+Light" rel="stylesheet" type="text/css">
-  <!-- <link href="http://db.onlinewebfonts.com/c/02514fa6256f2e5f8223acf684249fe6?family=Maven+Pro+Light" rel="stylesheet" type="text/css"/> -->
+  <!-- <link href="http://db.onlinewebfonts.com/c/ef5a32c267adadd7f5ebaa8f89e62b45?family=Maven+Pro+Light" rel="stylesheet" type="text/css"> -->
+  <link href="http://db.onlinewebfonts.com/c/02514fa6256f2e5f8223acf684249fe6?family=Maven+Pro+Light" rel="stylesheet" type="text/css"/>
 
   <meta charset="UTF-8">
   <title>Parallax</title>
@@ -259,6 +259,27 @@
       margin: 0;
       padding: 0;
     }
+
+    .vertical-line {
+      position: absolute;
+      height: 45%;
+      top: 15%;
+      width: 2px;
+      background: orange;
+      left: 12em;
+      transform: scaleY(0);
+      animation: a-expanded 1s 1.25s forwards;
+      transform-origin: 0 0;
+    }
+
+    @keyframes a-expanded {
+      from {
+        transform: scaleY(0);
+      }
+      to {
+        transform: scaleY(1);
+      }
+    }
   </style>
 </head>
 <body class="loading">
@@ -268,9 +289,10 @@
     <!-- <div class="nav-item"></div> -->
     <!-- <div class="nav-item"></div> -->
   <!-- </div> -->
+  <div class="vertical-line"></div>
   <div class="parallax slides">
     <div class="parallax__group slide">
-      <div class="parallax__layer parallax__layer--back">
+      <div class="parallax__layer parallax__layer--back" style="background-image: linear-gradient(to right, transparent, rgba(245, 222, 179, 0.5));">
         <div style="position: relative; display: flex; align-items: center; height: 100%;">
           <div class="vertical-line-1"></div>
           <!-- <div class="scew"></div> -->
