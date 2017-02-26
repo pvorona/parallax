@@ -305,6 +305,22 @@
         filter: blur(0px);
       }
     }
+
+    .interactive-circle {
+      margin-left: auto;
+      background-image: linear-gradient(to left bottom, hsla(14, 100%, 75%, 1) 0%, hsla(327, 100%, 80%, 1) 71%, transparent 0);
+      border-radius: 0 0 0 100%;
+      width: 300px;
+      transition: all .4s;
+      transform-origin: 25% 25%;
+      will-change: transform;
+      transform: scale(1);
+      height: 300px;
+    }
+
+    .interactive-circle:hover {
+      transform: scale(8);
+    }
   </style>
 </head>
 <body class="loading">
@@ -316,7 +332,7 @@
   <!-- </div> -->
   <!-- <div class="vertical-line"></div> -->
   <div class="parallax slides">
-    <div class="parallax__group slide" style="height: 200vh">
+    <div class="parallax__group" style="height: 200vh">
       <div class="parallax__layer parallax__layer--back circles" style="
 
       background-image:
@@ -334,8 +350,12 @@
           <!-- <div class="scew"></div> -->
         </div>
       </div>
-      <div class="parallax__layer parallax__layer--base">
-        <div style="position: relative; display: flex; align-items: center; height: 50%;">
+      <div class="parallax__layer parallax__layer--base" style="
+        display: flex; flex-direction: column;
+      ">
+        <div class="slide" style="
+          position: relative; display: flex; align-items: center; height: 50%;
+        ">
           <div class="text">
             <div class='work'>Work</div>
               <div class='fusion'>
@@ -351,14 +371,17 @@
 
           <!-- <div class="text"><div class='work'>Work</div><div class='fusion'>Fusion</div></div> -->
         </div>
-        <div style="
-        position: relative; display: flex; height: 50%;
-        /*background-image: linear-gradient(to left bottom, hsla(14, 100%, 75%, 1) 0%, hsla(327, 100%, 80%, 1) 45%, white 0);*/
-        background-color: hsla(0, 0%, 100%, .8);
-        box-shadow: 0px 48px 96px rgba(104,11,11,0.3);
-        margin: 0 40px;
-        ">
-        Automate
+        <div class="slide" style="flex-grow: 1; display: flex;">
+          <div style="
+          position: relative; display: flex;
+          flex-grow: 1;
+          background-color: hsla(0, 0%, 100%, .8);
+          box-shadow: 0px 48px 96px rgba(104,11,11,0.3);
+          margin: 40px;
+          overflow: hidden;
+          ">
+          <div class="interactive-circle"></div>
+          </div>
         </div>
       </div>
     </div>
