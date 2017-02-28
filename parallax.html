@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
   <!-- <link href="http://db.onlinewebfonts.com/c/ef5a32c267adadd7f5ebaa8f89e62b45?family=Maven+Pro+Light" rel="stylesheet" type="text/css"> -->
-  <link href="http://db.onlinewebfonts.com/c/02514fa6256f2e5f8223acf684249fe6?family=Maven+Pro+Light" rel="stylesheet" type="text/css"/>
+  <!-- <link href="http://db.onlinewebfonts.com/c/02514fa6256f2e5f8223acf684249fe6?family=Maven+Pro+Light" rel="stylesheet" type="text/css"/> -->
 
   <meta charset="UTF-8">
   <title>Parallax</title>
   <style>
+    @font-face {
+      font-family: "Maven Pro Light";
+      src: url("./MavenProLight-100.otf");
+    }
+
     .parallax {
       perspective: 1px;
       height: 100vh;
@@ -37,6 +42,10 @@
     }
     .parallax__layer--back {
       transform: translateZ(-1px) scale(2);
+    }
+
+    .parallax__layer--deep-back {
+      transform: translateZ(-2px) scale(3);
     }
     .parallax__group {
       position: relative;
@@ -295,14 +304,14 @@
     .circles {
       opacity: 0;
       will-change: opacity, filter;
-      filter: blur(15px);
+      /*filter: blur(15px);*/
       animation: fadein 1s 1.25s forwards;
     }
 
     @keyframes fadein {
       to {
         opacity: 1;
-        filter: blur(0px);
+        /*filter: blur(0px);*/
       }
     }
 
@@ -311,8 +320,8 @@
       background-image: linear-gradient(to left bottom, hsla(14, 100%, 75%, 1) 0%, hsla(327, 100%, 80%, 1) 71%, transparent 0);
       border-radius: 0 0 0 100%;
       width: 300px;
-      transition: all .4s;
-      transform-origin: 25% 25%;
+      transition: all .3s;
+      transform-origin: 100% 0%;
       will-change: transform;
       transform: scale(1);
       height: 300px;
@@ -320,7 +329,15 @@
     }
 
     .interactive-circle:hover {
-      transform: scale(8);
+      transform: scale(6);
+    }
+
+    .paper {
+      position: relative; display: flex;
+      flex-grow: 1;
+      /*box-shadow: 0px 48px 96px rgba(104,11,11,0.3);*/
+      margin: 40px;
+      overflow: hidden;
     }
   </style>
 </head>
@@ -334,23 +351,19 @@
   <!-- <div class="vertical-line"></div> -->
   <div class="parallax slides">
     <div class="parallax__group" style="height: 200vh">
-      <div class="parallax__layer parallax__layer--back circles" style="
+      <div class="parallax__layer parallax__layer--deep-back circles" style="
+        /*background-image:*/
+          /*radial-gradient(circle at 0 65%, rgba(255, 0, 0, 0.04) 15%, transparent 15%);*/
+          /*radial-gradient(circle at top right, rgba(245, 222, 179, 0.28) 25%, transparent 25%),*/
+          /*radial-gradient(circle at 100% 90%, wheat 20%, transparent 20%);*/
+      "></div>
 
-      background-image:
-        radial-gradient(circle at 0 65%, rgba(255, 0, 0, 0.04) 25%, transparent 25%),
-        radial-gradient(circle at top right, rgba(245, 222, 179, 0.28) 25%, transparent 25%),
-        radial-gradient(circle at 100% 90%, wheat 20%, transparent 20%);
-/*      background-image:
-        radial-gradient(circle at bottom left, rgba(255, 0, 0, 0.10) 25%, transparent 25%),
-        radial-gradient(circle at top right, rgba(245, 222, 179, 0.85) 25%, transparent 25%);
-*/      /*background-image: linear-gradient(to right top, rgba(255, 0, 0, 0.10), transparent 40%, transparent 60%, rgba(245, 222, 179, 0.85));*/
-      /*background-image: linear-gradient(to right, rgba(255, 0, 0, 0.05), transparent 20%, transparent 65%, rgba(245, 222, 179, 0.25))*/
-      ">
-        <div style="position: relative; display: flex; align-items: center; height: 100%;">
-          <!-- <div class="vertical-line-1"></div> -->
-          <!-- <div class="scew"></div> -->
-        </div>
-      </div>
+      <div class="parallax__layer parallax__layer--back circles" style="
+        background-image:
+          radial-gradient(circle at 0 65%, rgba(255, 0, 0, 0.04) 25%, transparent 25%),
+          radial-gradient(circle at top right, rgba(245, 222, 179, 0.28) 25%, transparent 25%),
+          radial-gradient(circle at 100% 90%, wheat 20%, transparent 20%);
+      "></div>
       <div class="parallax__layer parallax__layer--base" style="
         display: flex; flex-direction: column;
       ">
@@ -369,25 +382,13 @@
             <div class="scroll-text">Explore</div>
             <div class="arrow-down"></div>
           </div>
-
-          <!-- <div class="text"><div class='work'>Work</div><div class='fusion'>Fusion</div></div> -->
         </div>
         <div class="slide" style="flex-grow: 1; display: flex;">
-          <div style="
-          position: relative; display: flex;
-          flex-grow: 1;
-          background-color: hsla(0, 0%, 100%, .5);
-          box-shadow: 0px 48px 96px rgba(104,11,11,0.3);
-          margin: 40px;
-          overflow: hidden;
-          ">
-          <div style="
-            padding: 40px;
-            font-weight: bolder;
-          ">
-          <span style="font-size: 40px;">The Next Stop for Robotic Process Automation: Free as in Beer</span>
-          <p style="margin-top: 20px; font-size: 30px;">Robotics or Robotic Process Automation (RPA) has been making headlines in 2016. Known as a technology that automates repetitive manual labor by using software robots to mimic what a person does, RPA is an essential element of digital operations.</p></div>
-          <div class="interactive-circle"></div>
+          <div class="paper">
+            <div style="font-size: 6vw;">
+              Smart Process Automation
+            </div>
+            <!-- <div class="interactive-circle"></div> -->
           </div>
         </div>
       </div>
