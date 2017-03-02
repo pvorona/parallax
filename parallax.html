@@ -124,14 +124,26 @@
     }
 
     .line {
-      opacity: 0;
+      /*opacity: 0;*/
       position: absolute;
       height: 1px;
       width: 25%;
       background: #FF9800;
       bottom: 0;
       right: 0;
-      animation: a-fusion 1s .75s forwards;
+      animation: a-line 1s .75s forwards;
+      transform-origin: 100% 50%;
+      transform: scaleX(0);
+    }
+
+    @keyframes a-line {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
     }
 
     .arrow-container {
@@ -142,16 +154,12 @@
       opacity: 0;
       animation: a-arrow 1s 1.25s forwards;
       cursor: pointer;
+      transform: translateX(-50%);
     }
 
     @keyframes a-arrow {
-      from {
-        transform: translate(-50%, 100%);
-      }
-
       to {
         opacity: 1;
-        transform: translate(-50%, 0);
       }
     }
 
@@ -334,6 +342,7 @@
       /*box-shadow: 0px 48px 96px rgba(104,11,11,0.3);*/
       display: flex;
       overflow: hidden;
+      padding: 1em;
     }
 
     .news--item {
@@ -367,16 +376,44 @@
       margin: 2em;
       animation: fadein 1s;
     }
+
+    .card-wrapper {
+      margin: 1em;
+      flex: 1;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: .6;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-1 {
+      background-image: url(https://images.unsplash.com/photo-1467703834117-04386e3dadd8?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=);
+    }
+
+    .card-2 {
+      background-image: url(https://images.unsplash.com/photo-1448906654166-444d494666b3?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=);
+    }
+
+    .card-3 {
+      background-image: url(https://images.unsplash.com/photo-1486180939859-b2fe47b8037d?dpr=2&auto=format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=);
+    }
   </style>
 </head>
 <body class="loading">
-  <nav class="navigation">
+<!--   <nav class="navigation">
     <a class="nav-item"></a>
     <a class="nav-item"></a>
     <a class="nav-item"></a>
     <a class="nav-item"></a>
     <a class="nav-item"></a>
-  </nav>
+  </nav> -->
   <!-- <div class="loader"></div> -->
   <!-- <div class="nav"> -->
     <!-- <div class="nav-item"></div> -->
@@ -390,7 +427,8 @@
         background-image:
           radial-gradient(circle at 0 65%, rgba(255, 0, 0, 0.04) 25%, transparent 25%),
           radial-gradient(circle at top right, rgba(245, 222, 179, 0.28) 25%, transparent 25%),
-          radial-gradient(circle at 100% 90%, hsla(125, 30%, 83%, 0.38) 20%, transparent 20%);
+          radial-gradient(circle at 100% 90%, hsla(125, 30%, 83%, 0.38) 20%, transparent 20%),
+          radial-gradient(circle at 65% 70%, rgba(179, 199, 245, 0.28) 7%, transparent 0);
       "></div>
       <div class="parallax__layer parallax__layer--base" style="
         display: flex; flex-direction: column;
@@ -400,9 +438,7 @@
         ">
           <div class="text">
             <div class='work'>Work</div>
-              <div class='fusion'>
-              Fusion
-            </div>
+            <div class='fusion'>Fusion</div>
             <div class="line"></div>
           </div>
 
@@ -413,6 +449,9 @@
         </div>
         <div class="slide" style="flex-grow: 1; display: flex;">
           <div class="paper">
+            <div class='card-wrapper'><div class="card card-1"></div></div>
+            <div class='card-wrapper'><div class="card card-2"></div></div>
+            <div class='card-wrapper'><div class="card card-3"></div></div>
             <!-- <div class="interactive-circle"></div> -->
           </div>
         </div>
