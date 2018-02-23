@@ -152,7 +152,7 @@
       left: 50%;
       padding: 5em;
       opacity: 0;
-      animation: a-arrow 1s 1.25s forwards;
+      animation: a-arrow 1s 1.5s forwards;
       cursor: pointer;
       transform: translateX(-50%);
     }
@@ -281,15 +281,24 @@
     }
 
     .vertical-line {
-      position: absolute;
-      height: 30%;
-      top: 30%;
-      width: 2px;
+      position: fixed;
+      height: 15%;
+      bottom: 35px;
+      width: 1px;
       background: orange;
-      left: 20em;
+      left: 50%;
+      animation: a-expanded 1s .5s forwards, a-hiding .5s 1.5s forwards;
       transform: scaleY(0);
-      animation: a-expanded 1s .75s forwards;
       transform-origin: 0 0;
+    }
+
+    @keyframes a-hiding {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
     }
 
     @keyframes a-expanded {
@@ -311,11 +320,12 @@
     @keyframes fadein {
       from {
         opacity: 0;
+        transform: translateZ(-1px) scale(2.5);
       }
 
       to {
         opacity: 1;
-        /*filter: blur(0px);*/
+        transform: translateZ(-1px) scale(2);
       }
     }
 
@@ -407,20 +417,20 @@
   </style>
 </head>
 <body class="loading">
-<!--   <nav class="navigation">
-    <a class="nav-item"></a>
-    <a class="nav-item"></a>
-    <a class="nav-item"></a>
-    <a class="nav-item"></a>
-    <a class="nav-item"></a>
-  </nav> -->
+  <!-- <nav class="navigation"> -->
+    <!-- <a class="nav-item"></a> -->
+    <!-- <a class="nav-item"></a> -->
+    <!-- <a class="nav-item"></a> -->
+    <!-- <a class="nav-item"></a> -->
+    <!-- <a class="nav-item"></a> -->
+  <!-- </nav> -->
   <!-- <div class="loader"></div> -->
   <!-- <div class="nav"> -->
     <!-- <div class="nav-item"></div> -->
     <!-- <div class="nav-item"></div> -->
     <!-- <div class="nav-item"></div> -->
   <!-- </div> -->
-  <!-- <div class="vertical-line"></div> -->
+  <div class="vertical-line"></div>
   <div class="parallax slides">
     <div class="parallax__group" style="height: 200vh">
       <div class="parallax__layer parallax__layer--back circles" style="
